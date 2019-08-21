@@ -1,11 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
 import ThemeContext from './ThemeContext';
 
 const Content = () => {
-    const { style, visible, toggleStyle, toggleVisible } = useContext(
+    const { style, visible, setVisible, setStyle } = useContext(
       ThemeContext
     );
-  
+
+const toggleStyle = () => {
+    setStyle(style => (style === "light" ? "dark" : "light"));
+  }
+
+  const toggleVisible = () => {
+    setVisible( visible => !visible);
+  }
+
+
     return (
       <div>
         <p>

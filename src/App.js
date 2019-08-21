@@ -6,17 +6,9 @@ const App = () => {
   const [style, setStyle] = useState("light");
   const [visible, setVisible] = useState(true);
 
-const toggleStyle = () => {
-    setStyle(style => (style === "light" ? "dark" : "light"));
-  }
-
-const toggleVisible = () => {
-    setVisible(visible => !visible);
-  }
-
   return (
     <ThemeContext.Provider
-      value={{ style, visible, toggleStyle, toggleVisible }}
+      value={{ style, visible, setVisible, setStyle }}
     >
       <Content />
     </ThemeContext.Provider>
